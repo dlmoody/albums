@@ -8,12 +8,3 @@ module.exports = {
     password: process.env.MYSQL_PSWD
   }
 }
-
-
-//var rdsConnection = {
-//  host : 'photoalbumdb.c7w9t5yankex.us-east-1.rds.amazonaws.com',
-//  port : 3306,
-//  database : 'photoalbums',
-//  user : 'photoappuser',
-//  password : 'joshua3334'
-//};

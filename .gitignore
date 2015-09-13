@@ -28,4 +28,4 @@ node_modules
 
 
 # hidden
-config/local.js
+/config/local.js
