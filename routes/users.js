@@ -42,7 +42,7 @@ router.post('/login', function(req, res) {
 			} else {
 				res.send(obj);
 			}
-		});		
+		});
 	} else {
 		res.status(400).send({error: 'Invalid login'});
 	}
@@ -59,7 +59,7 @@ router.post('/logout', function(req, res) {
 			}
 		});
 	} else {
-		res.status(400).send({error: 'Invalid user'});		
+		res.status(400).send({error: 'Invalid user'});
 	}
 });
 

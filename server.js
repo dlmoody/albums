@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var photos = require('./routes/photos');
 var albums = require('./routes/albums');
+var info = require('./routes/info');
 var globals = require('./lib/globals');
 var mysql       = require('mysql');
 var app = express();
@@ -29,6 +30,8 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/photos', photos);
 app.use('/albums', albums);
+app.use('/info', info);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -41,7 +44,8 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
+if (app.get('ENVIRONMENT') === 'dev') {
+    console.log('is in dev')
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         res.render({
@@ -62,7 +66,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.set('port', 80);
+app.set('port', globals.applicationPort);
 
 var server = app.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
